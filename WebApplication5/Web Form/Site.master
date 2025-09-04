@@ -1,0 +1,94 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="WebApplication5.Web_Form.Site" %>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Personal Portfolio</title>
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #f4f4f4;
+            color: #222;
+        }
+        .header {
+            width: 100%;
+            background: #fff;
+            border-bottom: 1px solid #eaeaea;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 0 0 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            height: 60px;
+        }
+        .nav-btn {
+            background: none;
+            border: none;
+            color: #222;
+            font-size: 16px;
+            margin: 0 12px;
+            padding: 10px 16px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background 0.2s, color 0.2s;
+        }
+        .nav-btn:hover, .nav-btn.active {
+            background: #222;
+            color: #fff;
+        }
+        .content {
+            max-width: 900px;
+            margin: 100px auto 90px auto;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            padding: 40px 32px;
+            min-height: 400px;
+        }
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: #f8f9fa;
+            color: #6c757d;
+            text-align: center;
+            padding: 20px 0;
+            border-top: 1px solid #dee2e6;
+            height: 60px;
+            font-size: 15px;
+        }
+    </style>
+    <script type="text/javascript">
+        function navigate(page) {
+            window.location.href = page;
+        }
+    </script>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="header">
+            <button type="button" class="nav-btn" onclick="navigate('WebForm1.aspx')">Home</button>
+            <button type="button" class="nav-btn" onclick="navigate('[232127][DelaCruz]AboutMe.aspx')">About Me</button>
+            <button type="button" class="nav-btn" onclick="navigate('[232127][DelaCruz]Portfolio.aspx')">Portfolio/Projects</button>
+            <button type="button" class="nav-btn" onclick="navigate('[232127][DelaCruz]Services.aspx')">Services/Skills</button>
+            <button type="button" class="nav-btn" onclick="navigate('[232127][DelaCruz]Resume.aspx')">Resume/CV</button>
+            <button type="button" class="nav-btn" onclick="navigate('[232127][DelaCruz]Contact.aspx')">Contact</button>
+            <button type="button" class="nav-btn" onclick="navigate('[232127][DelaCruz]Blog.aspx')">Blog/Articles</button>
+            <button type="button" class="nav-btn" onclick="navigate('[232127][DelaCruz]Gallery.aspx')">Gallery</button>
+            <button type="button" class="nav-btn" onclick="navigate('[232127][DelaCruz]Testimonials.aspx')">Testimonials/Feedback</button>
+            <button type="button" class="nav-btn" onclick="navigate('[232127][DelaCruz]FAQ.aspx')">FAQ</button>
+        </div>
+        <div class="content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+        </div>
+        <div class="footer">
+            &copy; <%: DateTime.Now.Year %> Dela Cruz. All rights reserved.
+        </div>
+    </form>
+</body>
+</html>
